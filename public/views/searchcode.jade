@@ -1,0 +1,83 @@
+table(class="table table-striped")
+	tbody
+		tr
+			td(height="60px")
+				div.reset
+					button.btn.btn-success(ng-click="resetPage()") Reset
+div.contentwrapper
+	div.bg-danger.text-center(ng-show="!statusok", class="alert col-lg-12 centered")
+		strong {{ errormessage.error.message }}
+	div.container-fluid
+		div.col-md-4(ng-class="{'inactive': !showStepOne}")
+			h3 STEP 1
+				i.fa.fa-check-circle(ng-show="showStepTwo || showStepThree || showResults")
+			label Enter the path to the folder for the view(.jade) files in your project
+			input(type="text", name="directory.readhtml",value="directory.readhtml", ng-model="directory.readhtml", ng-disabled="!showStepOne")
+			br
+			button.btn.btn-primary(type="submit", ng-click="readHtml()", ng-disabled="!showStepOne") ReadHtml
+		div.col-md-4(ng-class="{'inactive': !showStepTwo}")
+			h3 STEP 2
+				i.fa.fa-check-circle(ng-show="showStepThree || showResults")
+			label Enter the path to the folder for the css files in your project
+			input(type="text", name="directory.readcss",value="directory.readcss", ng-model="directory.readcss", ng-disabled="!showStepTwo")
+			br
+			button.btn.btn-primary(type="submit", ng-click="readCss()", ng-disabled="!showStepTwo") ReadCss
+		div.col-md-4(ng-class="{'inactive': !showStepThree}")
+			h3 STEP 3
+				i.fa.fa-check-circle(ng-show="showResults")
+			h4 Click button below to get results
+			br
+			button.btn.btn-primary(type="submit", ng-click="getResults()", ng-disabled="!showStepThree") Get Results
+	div.container-fluid
+		div.col-md-12(ng-class="{'inactive': !showResults || codecleaned}")
+			h3 STEP 4
+			h4 Write
+			span Cleaned files will be written to the same css folder used in Step2. Original files will remain untouched. A new cleaned file will be written for each css file in the folder
+			br
+			button.btn.btn-primary(type="submit", ng-click="cleanCode()", ng-disabled="!showResults || codecleaned") CleanCode
+	div.container-fluid
+		div.col-md-12(ng-show="codecleaned")
+			span Cleaned/commented css files were saved here: {{ cssdirectory }}
+	br
+	br
+	div.container-fluid(ng-show="showResults")
+		strong Results returned for unused selectors
+		pre
+			code
+				table.table.table-striped
+					tbody
+						tr(ng-repeat="selector in selectors.advanced")
+							td(ng-show="selector.selector.length > 0")
+								span Found {{ selector.selector.length }} xtra unused complex selectors in Filename: {{ selector.filename }}
+								ul
+									li(ng-repeat="complexselectors in selector.selector") {{ complexselectors }}
+					hr
+				table.table.table-striped
+					tbody
+
+						tr(ng-repeat="selector in selectors.classes")
+							td(ng-show="selector.selector.length > 0")
+								span Found {{ selector.selector.length }} xtra unused classes in Filename: {{ selector.filename }}
+								ul
+									li(ng-repeat="class in selector.selector") {{ class }}
+					hr
+				table.table.table-striped
+					tbody
+
+						tr(ng-repeat="selector in selectors.ids")
+							td(ng-show="selector.selector.length > 0")
+								span Found {{ selector.selector.length }} xtra unused ids in Filename :  {{ selector.filename }}
+								ul
+									li(ng-repeat="id in selector.selector") {{ id }}
+					hr
+				table.table.table-striped
+					tbody
+						tr(ng-repeat="selector in selectors.tags")
+							td(ng-show="selector.selector.length > 0")
+								span Found {{ selector.selector.length }} xtra unused tags in Filename :  {{ selector.filename }}
+								ul
+									li(ng-repeat="tag in selector.selector") {{ tag }}
+
+	accordion(close-others="oneAtATime", ng-show="showResults")
+		accordion-group(ng-repeat="file in selectors.filenames", heading="{{ file }}")
+			strong(ng-repeat="classname in selectors.classes") {{ classname }}
