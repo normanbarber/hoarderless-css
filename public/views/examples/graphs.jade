@@ -3,11 +3,10 @@ script#inventorychart(type='text/ng-template')
 		div.container-fluid
 			div.col-md-4(ng-class="{'inactive': !showStepOne}")
 				a(href="http://www.normanbarber.com")
-					h3 STEP 1
+					h3(ng-class="{'inactive2': 'active2' !showStepOne}") STEP 1
 						i.fa-wheelchair(ng-show="showStepTwo || showStepThree || showResults")
 				label Enter a folder with html files to read into memory
-				div.input-append
-				    input#input-search(type="text", name="directory.readhtml",value="directory.readhtml", ng-model="directory.readhtml")
+				input(type="text", name="directory.readhtml",value="directory.readhtml", ng-model="directory.readhtml")
 		div.container-fluid
 			div.col-md-12(ng-class="{'inactive': !showResults || codecleaned}")
 				h3 STEP 4
