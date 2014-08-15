@@ -6,7 +6,7 @@ This tools designed to identify css hoarding in a project folder. Enter the path
     node server
 
 ### Specs
-Currently this tool identifies any of the selector types listed below or any combination of these. These include some of the most commonly used combinators but will be including more as I have time
+Currently this tool identifies any of the selector types listed below or any combination. These include some of the most commonly used combinators but will be including more as I have time
 * class
 * id
 * tag
