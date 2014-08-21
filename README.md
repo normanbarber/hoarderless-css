@@ -1,15 +1,15 @@
 # Hoarderless Css
-This tools designed to identify css hoarding in a project folder. Enter the path to your jade files, then the path to your css files, then clean the code and write new files that have unused selectors commented. The original css files remain untouched.
+This tools designed to identify css hoarding in your project. Enter the path to your jade files, then the path to your css files, then write new files that have unused selectors commented. The original css files remain untouched.
 
 ### Running in the browser
 
     node server
 
 ### Running in the command line
-#### Install the package to run locally
+##### Install the package to run locally
     > npm link
 
-#### Enter the command and 2 args ( path1 is the project view folder and path2 is the project css folder )
+##### Enter the command and 2 args ( path1 for the projects view folder and path2 for the projects css folder )
     > hoarderless path/to/your/view/folder path/to/your/css/folder
 
 ### Specs
