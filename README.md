@@ -9,7 +9,7 @@ This tools designed to identify css hoarding in your project. Enter the path to 
 ##### Install the package to run locally
     > npm link
 
-##### Enter the command and 2 args ( path1 for the projects view folder and path2 for the projects css folder )
+##### Expects 2 arguments (path1 for the projects view folder and path2 for the projects css folder)
     > hoarderless path/to/your/view/folder path/to/your/css/folder
 
 ### Specs
