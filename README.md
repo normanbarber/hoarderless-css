@@ -6,10 +6,10 @@ This tools designed to identify css hoarding in a project folder. Enter the path
     node server
 
 ### Running in the command line
-Install the package to run locally
+#### Install the package to run locally
     > npm link
 
-Enter the command and 2 args ( path1 is the project view folder and path2 is the project css folder )
+#### Enter the command and 2 args ( path1 is the project view folder and path2 is the project css folder )
     > hoarderless path/to/your/view/folder path/to/your/css/folder
 
 ### Specs

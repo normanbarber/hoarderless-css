@@ -8,7 +8,7 @@ var codereadercss = require('../lib/codeReaderCss');
 var args = process.argv.slice(2);
 
 if (args.length != 2) {
-    throw new Error('two argument must be specified (the path to your view files and the path your css files)');
+    throw new Error('two arguments must be specified (the path to your view files and the path your css files)');
 }
 module.exports.compare = compare = {
     services: {
