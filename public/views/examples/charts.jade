@@ -1,25 +1,25 @@
-script#inventorychart(type='text/ng-template')
+script#charts(type='text/ng-template')
 	div(align="center")
 		div.container-fluid
 			div.left.divChart
-				div.statusLegendMaterial
-					table.tableLegend.table.one
+				div.somewrapper
+					table.tabledata.table.one
 						tr.somerow
 							td.one(width="10%")
 								div
-									div.statusLegendMaterial
+									div.somewrapper
 							td.one(width="10%")
 								div
-									div.statusLegendMaterial(ng-style="returnStyle(item.status)")
+									div.somewrapper(ng-style="returnStyle(item.status)")
 							td.one(width="90%")
 								div.btn
 									span {{item.name}}
 			br
 			div.left.divChart#sometag
-				div.statusLegendMaterial #{__('colStatus')}
-					table.tableLegend.table
+				div.somewrapper #{__('colStatus')}
+					table.tabledata.table
 						tr.somerow(ng:repeat="item in legend")
 							td.two(width="10%")
 								div
-									div.statusLegendMaterial(ng-style="returnStyle(item.status)")
+									div.somewrapper(ng-style="returnStyle(item.status)")
 							td.two(width="90%")
