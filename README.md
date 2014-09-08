@@ -1,5 +1,5 @@
 # Hoarderless Css
-This tools designed to identify css hoarding in your project. Enter the path to your jade files, then the path to your css files, then write new files that have unused selectors commented. The original css files remain untouched.
+This tools designed to identify css hoarding in a project. Enter the path to your jade files, then the path to your css files, then write new files that have unused selectors commented. The original css files remain untouched.
 
 ### Running in the browser
 
