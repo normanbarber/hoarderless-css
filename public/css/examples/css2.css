@@ -7,7 +7,11 @@ body {
 a {
     color: #00B7FF;
 }
-
+#someid{
+    width:50%;
+    padding: 5px 10px;
+    margin-bottom:20px;
+}
 .table td, .table th{
     padding:4px 2px;
 }
