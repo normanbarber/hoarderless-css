@@ -25,23 +25,13 @@ div.contentwrapper
 		div.col-md-4(ng-class="{'inactive': !showStepThree}")
 			h3 STEP 3
 				i.fa.fa-check-circle(ng-show="showResults")
-			h4 Click button below to get results
+			h4 Ok hoarder...
 			br
-			button.btn.btn-primary(type="submit", ng-click="getResults()", ng-disabled="!showStepThree") Get Results
-	div.container-fluid
-		div.col-md-12(ng-class="{'inactive': !showResults || codecleaned}")
-			h3 STEP 4
-			h4 Write
-			span Cleaned files will be written to the same css folder used in Step2. Original files will remain untouched. A new cleaned file will be written for each css file in the folder
-			br
-			button.btn.btn-primary(type="submit", ng-click="cleanCode()", ng-disabled="!showResults || codecleaned") CleanCode
-	div.container-fluid
-		div.col-md-12(ng-show="codecleaned")
-			span Cleaned/commented css files were saved here: {{ cssdirectory }}
+			button.btn.btn-primary(type="submit", ng-click="getResults()", ng-disabled="!showStepThree") Get it in Order
 	br
 	br
 	div.container-fluid(ng-show="showResults")
-		strong Results returned for unused selectors
+		strong List of results for unused selectors found in this folder {{ cssdirectory }}
 		pre
 			code
 				table.table.table-striped

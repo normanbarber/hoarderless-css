@@ -19,11 +19,7 @@ div.col-md-4 input[type=text]{
 #sometag.left.divChart {
 
 }
-#someid[type=text]{
-    width:50%;
-    padding: 5px 10px;
-    margin-bottom:20px;
-}
+
 #someid{
     width:50%;
     padding: 5px 10px;
@@ -32,16 +28,7 @@ div.col-md-4 input[type=text]{
 .someclass{
     width:100%;
 }
-#someid[type=text]{
-    width:50%;
-    padding: 5px 10px;
-    margin-bottom:20px;
-}
-#someid[type=text]{
-    width:50%;
-    padding: 5px 10px;
-    margin-bottom:20px;
-}
+
 #someid,.someclass, div.left.divChart#sometag {
 font-size: 18px;
 }
