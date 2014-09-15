@@ -82,7 +82,7 @@ xcss.module('xcss.controllers', [])
 					$scope.selectors.tags = data.tags;
 					$scope.selectors.advanced = data.advanced;
 					$scope.selectors.cssfilenames = data.filenames;
-                    $scope.cleanCode();
+					$scope.cleanCode();
 				})
 				.error(function(error){
 					$log.log('get results service error');

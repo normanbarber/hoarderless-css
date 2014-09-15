@@ -11,7 +11,7 @@ div.contentwrapper
 		div.col-md-4(ng-class="{'inactive': !showStepOne}")
 			h3 STEP 1
 				i.fa.fa-check-circle(ng-show="showStepTwo || showStepThree || showResults")
-			label Enter the path to the folder for the view(.jade) files in your project
+			label Enter the path to the folder for the view files in your project
 			input(type="text", name="directory.readhtml",value="directory.readhtml", ng-model="directory.readhtml", ng-disabled="!showStepOne")
 			br
 			button.btn.btn-primary(type="submit", ng-click="readHtml()", ng-disabled="!showStepOne") ReadHtml
