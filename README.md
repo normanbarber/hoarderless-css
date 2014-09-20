@@ -1,5 +1,5 @@
 # Hoarderless Css
-Designed to identify css hoarding in a project. Enter the path to your view code, then enter the path to your css files, then in Step3 you write the new css files that have unused selectors commented. The original css files remain untouched.
+Designed to identify css hoarding in a project. Enter the path to your view code, then enter the path to your css files, then step3, you can write the new css files that will have unused selectors commented. The original css files remain untouched.
 
 ### Running in the browser
 
