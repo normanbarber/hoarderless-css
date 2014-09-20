@@ -1,5 +1,5 @@
-var _ = require('underscore'),
-  path = require('path');
+var _ = require('underscore');
+var path = require('path');
 
 exports.setup = function(params) {
   var app = params.app, routes = params.routes;
