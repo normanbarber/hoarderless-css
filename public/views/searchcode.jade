@@ -38,7 +38,9 @@ div.contentwrapper
 					tbody
 						tr(ng-repeat="selector in selectors.advanced")
 							td(ng-show="selector.selector.length > 0")
-								span Found {{ selector.selector.length }} xtra unused complex selectors in Filename: {{ selector.filename }}
+								span
+									strong {{ selector.selector.length }} unused complex selectors
+									span  in : {{ selector.filename }}
 								ul
 									li(ng-repeat="complexselectors in selector.selector") {{ complexselectors }}
 					hr
@@ -47,7 +49,9 @@ div.contentwrapper
 
 						tr(ng-repeat="selector in selectors.classes")
 							td(ng-show="selector.selector.length > 0")
-								span Found {{ selector.selector.length }} xtra unused classes in Filename: {{ selector.filename }}
+								span
+									strong {{ selector.selector.length }} unused classes
+									span  in : {{ selector.filename }}
 								ul
 									li(ng-repeat="class in selector.selector") {{ class }}
 					hr
@@ -56,7 +60,9 @@ div.contentwrapper
 
 						tr(ng-repeat="selector in selectors.ids")
 							td(ng-show="selector.selector.length > 0")
-								span Found {{ selector.selector.length }} xtra unused ids in Filename :  {{ selector.filename }}
+								span
+									strong {{ selector.selector.length }} unused ids
+									span  in  :  {{ selector.filename }}
 								ul
 									li(ng-repeat="id in selector.selector") {{ id }}
 					hr
@@ -64,7 +70,9 @@ div.contentwrapper
 					tbody
 						tr(ng-repeat="selector in selectors.tags")
 							td(ng-show="selector.selector.length > 0")
-								span Found {{ selector.selector.length }} xtra unused tags in Filename :  {{ selector.filename }}
+								span
+									strong {{ selector.selector.length }} unused tags
+									span  in  :  {{ selector.filename }}
 								ul
 									li(ng-repeat="tag in selector.selector") {{ tag }}
 
