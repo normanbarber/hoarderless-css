@@ -11,6 +11,11 @@ div.contentwrapper
 		div.col-md-4(ng-class="{'inactive': !showStepOne}")
 			h3 STEP 1
 				i.fa.fa-check-circle(ng-show="showStepTwo || showStepThree || showResults")
+			label(style="padding-right:10px;") jade
+				input(type="radio", name="viewtype", value="jade", ng-model="directory.viewtype")
+			label(style="padding-left:20px;padding-right:10px;") html
+				input(type="radio", name="viewtype", value="html", ng-model="directory.viewtype", ng-checked="true")
+			br
 			label Enter the path to the folder for the view files in your project
 			input(type="text", name="directory.readhtml",value="directory.readhtml", ng-model="directory.readhtml", ng-disabled="!showStepOne")
 			br

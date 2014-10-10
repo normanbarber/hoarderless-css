@@ -8,8 +8,11 @@ xcss.module('xcss.controllers', [])
 			$scope.showResults = false;
 			$scope.statusok = true;
 			$scope.codecleaned = false;
-			$scope.directory = {readhtml: '', readcss: ''};
+			$scope.directory = {};
+            $scope.directory.readhtml = '';
+            $scope.directory.readcss = '';
 		}
+
 		$scope.cssdirectory;
 		$scope.isLoaded = false;
 		resetDefault();
@@ -21,7 +24,7 @@ xcss.module('xcss.controllers', [])
 			resetDefault();
 		};
 		$scope.readHtml = function(){
-
+            $scope.directory.viewtype = !$scope.directory.viewtype ? 'html' : $scope.directory.viewtype;
 			httpService.post('/readhtml', $scope.directory)
 				.success(function(data){
 					$log.info('read html');
@@ -42,7 +45,6 @@ xcss.module('xcss.controllers', [])
 				});
 		};
 		$scope.readCss = function(){
-			$log.info($scope.directory);
 			httpService.post('/readcss', $scope.directory)
 				.success(function(data){
 					$log.info('read css');
