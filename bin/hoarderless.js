@@ -42,10 +42,7 @@ module.exports.compare = compare = {
 		'cleancode': function(){
 			var self = this;
 			var fileformat = '.css';
-			codewriter(self.cssdirectory, fileformat, this.selectors, function(err, code) {
-				self.selectors.cleancss = code;
-			});
-
+            codewriter(self.cssdirectory, fileformat, this.selectors);
 		}
 	}
 };
