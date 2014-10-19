@@ -3,7 +3,7 @@ Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the pat
 
 ### Running in the browser
 
-    node server
+    node server or npm start
 
 ### Running in the command line
 ##### Install the package to run locally
