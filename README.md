@@ -1,9 +1,9 @@
 # Hoarderless Css
-Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the path to your view code, Step2 - enter the path to your css code, Step3 - Click OK to write the new css files that will have unused selectors commented. The original css files remain untouched.
+Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the path to your view code, Step2 - enter the path to your css code, Step3 - Click OK to write the new css that will have unused selectors commented. The original css code remain untouched.
 
 ### Running in the browser
 
-    node server or npm start
+    > npm start
 
 ### Running in the command line
 ##### Install the package to run locally

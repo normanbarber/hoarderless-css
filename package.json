@@ -1,7 +1,7 @@
 {
 	"name": "hoarderless-css",
 	"version": "0.0.1",
-	"description": "I was a css hoarder",
+	"description": "I was a css hoarder but that was back then",
 	"preferGlobal": "false",
 	"scripts": {
 		"start": "node server.js"
