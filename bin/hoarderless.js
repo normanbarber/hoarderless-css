@@ -1,49 +1,76 @@
 #!/usr/bin/env node
-var codereader = require('../lib/codeReaderMain');
+
 var codewriter = require('../lib/codeWriterMain');
 var comparecode = require('../lib/compareCodeMain');
-var codereaderview = require('../lib/codeReaderView');
-var codereadercss = require('../lib/codeReaderCss');
+var cmdjson = require('commandjson');
+var commander = require('commander');
+var Q = require('q');
 
-var args = process.argv.slice(2);
+commander
+    .version('0.0.1')
+    .option('-t, --viewtype [value]', 'a string for view type (html)')
+    .option('-v, --viewpath [value]', 'a string for view folder path (/path/to/your/views/folder)')
+    .option('-s, --stylepath [value]', 'a string for stylesheet folder path (/path/to/your/css/folder)')
+    .parse(process.argv);
 
-if (args.length != 2) {
-	throw new Error('two arguments must be specified (the path to your view files and the path your css files)');
-}
+commander.parse(process.argv);
+
 module.exports.compare = compare = {
 	services: {
 		'selectors': {},
-		'readhtml': function(viewpath,csspath) {
-			var readviewdirectory = viewpath;
-			var self = this;
-			var fileformat = '.html';
-			codereader(readviewdirectory, fileformat, codereaderview, function(err, code) {
-				self.selectors.view = code;
-				self.readcss(csspath);
-			});
+		'readview': function() {
+            console.log('----- reading view files');
+            var self = this;
+            var file = {};
+            file.type = commander.viewtype;
+            file.paths = commander.viewpath;
+
+            var readcssdirectory = commander.stylepath;
+
+	        return cmdjson.getFiles(file)
+			    .then(function(code){
+                     self.selectors.view = code[0];
+                     self.readcss(commander.stylepath);
+				})
+                .fail(function(error) {
+                     return error;
+                });
 		},
 		'readcss': function(csspath) {
-			var readcssdirectory = csspath;
+            console.log('----- reading css files');
 			var self = this;
-			var fileformat = '.css';
-			self.cssdirectory = readcssdirectory;
-			codereader(readcssdirectory, fileformat, codereadercss, function(err, code) {
-				self.selectors.css = code;
-				self.getresults();
-			});
+			self.cssdirectory = csspath;
+
+            var file = {};
+            var fileformat;
+            file.type = '.css';
+            file.paths = csspath;
+
+            return cmdjson.getFiles(file)
+                .then(function(code){
+
+                    self.selectors.css = code[0];
+                    self.compare();
+                })
+                .fail(function(error) {
+                    return error;
+                })
 		},
-		'getresults': function(){
+		'compare': function(){
+            console.log('----- comparing selectors in view with selectors in css');
 			var self = this;
-			comparecode(this.selectors, function(err, code) {
-				self.selectors.unused = code[0];
+
+            comparecode(this.selectors, function(err, code) {
+				self.selectors.unused = code;
 				self.cleancode();
 			});
 		},
 		'cleancode': function(){
+            console.log('----- writing cleancode');
 			var self = this;
 			var fileformat = '.css';
             codewriter(self.cssdirectory, fileformat, this.selectors);
 		}
 	}
 };
-compare.services.readhtml(args[0],args[1]);
+compare.services.readview();

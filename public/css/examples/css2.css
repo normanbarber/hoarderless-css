@@ -21,27 +21,3 @@ a {
 .table td{
     text-align: right;
 }
-.table td:nth-child(1){
-    padding:4px 2px 4px 2px;
-}
-.tableLegend.table.one td:nth-child(4){
-    text-align: left;
-}
-.tableLegend.table td.one:first-child{
-    text-align: left;
-}
-.table td:nth-child(3){
-    text-align: left;
-}
-.navbar .nav.pull-right{
-    margin: 0 20px;
-}
-.navbar-inner{
-    min-height: 55px;
-}
-.navbar .nav>li>a:focus, .navbar .nav>li>a:hover{
-    background: #f5f5f5;
-}
-.btn, .input-append input{
-    font-size: 10px;
-}

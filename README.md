@@ -6,11 +6,17 @@ Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the pat
     > npm start
 
 ### Running in the command line
-##### Install the package to run locally
+##### Install and link to run locally
     > npm link
 
-##### Expects 2 arguments (path1 for the projects view folder and path2 for the projects css folder)
-    > hoarderless path/to/your/view/folder path/to/your/css/folder
+##### Run hoarderless using flags
+    > hoarderless --viewtype html --viewpath path/to/your/view/folder --stylepath path/to/your/css/folder
+
+##### Options:
+    -t, --viewtype        a string for view type (html)
+    -v, --viewpath        a string for view path (/path/to/your/view/folder)
+    -s, --stylepath       a string for stylesheet path (/path/to/your/css/folder)
+
 
 ### Specs
 Currently this tool identifies any of the selector types listed below or any combination. These include some of the most commonly used combinators but will be including more as I have time
@@ -24,5 +30,6 @@ Currently this tool identifies any of the selector types listed below or any com
 * basic negation
 * sibling selector
 * nth first and last child
+
 
 

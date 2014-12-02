@@ -23,6 +23,7 @@ xcss.module('xcss.controllers', [])
 		$scope.resetPage = function(){
 			resetDefault();
 		};
+
 		$scope.readHtml = function(){
             $scope.directory.viewtype = !$scope.directory.viewtype ? 'html' : $scope.directory.viewtype;
 			httpService.post('/readhtml', $scope.directory)
@@ -37,7 +38,7 @@ xcss.module('xcss.controllers', [])
 						$scope.showStepThree = false;
 					}else{
 						$scope.statusok = false;
-						$scope.errormessage = data;
+						$scope.errormessage = data.exception;
 					}
 				})
 				.error(function(error){
@@ -60,7 +61,7 @@ xcss.module('xcss.controllers', [])
 
 					}else{
 						$scope.statusok = false;
-						$scope.errormessage = data;
+                        $scope.errormessage = data.exception;
 					}
 				})
 				.error(function(error){

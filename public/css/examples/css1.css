@@ -17,9 +17,7 @@ div#container > p{
 div.col-md-4 input{
     min-height: 150px;
 }
-p[data-dog="dirty"]{
 
-}
 div[type="text"]{
 
 }

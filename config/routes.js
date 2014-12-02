@@ -1,4 +1,4 @@
-module.exports = exports = function () {
+module.exports =  function () {
 	return [
 		{
 			method: 'get',
@@ -18,7 +18,7 @@ module.exports = exports = function () {
 			method: 'post',
 			route: '/readhtml',
 			handler: {
-				module: 'routeHandlers',
+				module: 'main',
 				method: 'readhtml'
 			}
 		},
@@ -26,7 +26,7 @@ module.exports = exports = function () {
 			method: 'post',
 			route: '/readcss',
 			handler: {
-				module: 'routeHandlers',
+				module: 'main',
 				method: 'readcss'
 			}
 		},
@@ -34,7 +34,7 @@ module.exports = exports = function () {
 			method: 'post',
 			route: '/getresults',
 			handler: {
-				module: 'routeHandlers',
+				module: 'main',
 				method: 'getresults'
 			}
 		},
@@ -42,7 +42,7 @@ module.exports = exports = function () {
 			method: 'post',
 			route: '/cleancode',
 			handler: {
-				module: 'routeHandlers',
+				module: 'main',
 				method: 'cleancode'
 			}
 		}
