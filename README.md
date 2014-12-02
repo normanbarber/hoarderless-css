@@ -19,7 +19,7 @@ Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the pat
 
 
 ### Specs
-Currently this tool identifies any of the selector types listed below or any combination. These include some of the most commonly used combinators but will be including more as I have time
+Currently this tool identifies any of the selector types listed below or any combination. These include some of the more commonly used combinators, and selector types
 * class
 * id
 * tag
