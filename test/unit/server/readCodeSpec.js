@@ -34,8 +34,8 @@ describe('Compare View/CSS Code', function() {
 
 		env.req = {
 			body: {
-				readhtml: '../mocks/views/examples',
-				readcss: '../mocks/css/examples',
+				readhtml: '../mocks/views',
+				readcss: '../mocks/css',
 				viewtype: 'html'
 			}
 		};
