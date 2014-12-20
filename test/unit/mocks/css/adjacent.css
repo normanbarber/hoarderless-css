@@ -1,0 +1,15 @@
+
+ div#containerabout + [type^="text"]{ }
+
+ div#containerabout + [type="text"]{ }
+
+ div#containerabout p.two + [type="text"]{}
+
+div#containerabout p.two + p.two{}
+
+div#container p.someclass + span#somespan222.somespanclass2222 + span#somespan3333{}
+
+div#container p.someclass + span#somespan222.somespanclass2222{}
+
+div#container > p.someclass + span#somespan3333{}
+

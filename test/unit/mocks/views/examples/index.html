@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>some file</title>
+</head>
+<body>
+<div id="container">
+	<span id="somespan111" class="somespanclass111">Context is object based</span>
+	<p class="someclass2">
+	</p>
+	<p class="someclass">
+		<span id="somespan" class="somespanclass">Scope is function based</span>
+	</p>
+	<br />
+</div>
+<div id="container">
+	<span id="somespan222" class="somespanclass2222">Context is object based</span>
+	<p class="someclass2">
+		<span id="somespan" class="somespanclass">CScope is function based</span>
+	</p>
+	<p class="someclass noodle"></p>
+	<span id="somespan222" class="somespanclass2222">Context is object based</span>
+	<span id="somespan3333" class="somespanclass33">Context is object based</span>
+	<p class="someclass"></p>
+</div>
+
+</body>
+</html>
