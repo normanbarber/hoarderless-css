@@ -6,13 +6,13 @@ Designed to identify css hoarding in a project in 3 steps. Step1 - Enter the pat
     > npm start
 ```
 
-### Running in the command line
+### Running from the command line
 ##### Install and link to run locally
 ```javascript
     > npm link
 ```
 
-##### Run hoarderless using flags
+##### command line example
 ```javascript
     > hoarderless --viewtype html --viewpath path/to/your/view/folder --stylepath path/to/your/css/folder
 ```
