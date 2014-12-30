@@ -20,11 +20,11 @@
 		"request": "~2.21.0",
 		"commander": "*",
 		"underscore": "*",
-        "chai": "*",
-        "mocha": "*",
-        "sinon": "*",
-        "sinon-chai": "*",
-        "sandboxed-module": "*"
+		"chai": "*",
+		"mocha": "*",
+		"sinon": "*",
+		"sinon-chai": "*",
+		"sandboxed-module": "*"
 	},
 	"devDependencies": {}
 }
